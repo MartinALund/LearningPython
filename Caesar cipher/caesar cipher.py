@@ -41,8 +41,8 @@ def decrypt(text, key):
 
 
 def bruteforce(text):
-    for i in range(len(alfabet)):
-        print("{}:{}".format(i, decrypt(text,i)))
+    for key in range(len(alfabet)):
+        print("{}:{}".format(key, decrypt(text,key)))
 
 
 def cipher(text, key):
