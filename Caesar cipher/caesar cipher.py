@@ -1,4 +1,4 @@
-alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 def get_mode():
     while 1:
@@ -42,7 +42,7 @@ def decrypt(text, key):
 
 
 def bruteforce(text):
-    for key in range(len(alfabet)):
+    for key in range(len(alphabet)):
         print("{}:{}".format(key, decrypt(text,key)))
 
 
@@ -51,31 +51,30 @@ def frekvens(text):
     count = 0
     for chars in text:
         count += 1
-        if chars in alfabet:
-            pos = alfabet.index(chars)
+        if chars in alphabet:
+            pos = alphabet.index(chars)
             list[pos] += 1
 
 
-    for chars in alfabet:
-        print("{}: {}".format(chars, list[alfabet.index(chars)]))
+    for chars in alphabet:
+        print("{}: {}".format(chars, list[alphabet.index(chars)]))
 
     print()
-    print(max(list))
-    print(list.index(max(list)))
-    # Find the most common letter and print it here
-
-
-
+    char_most_appearance = max(list)
+    alphabet_char = alphabet[list.index(max(list))]
     print("Total chars: {}".format(count))
+    print("{} blev vist {} gange".format(alphabet_char, char_most_appearance))
+    print()
+
 
 def cipher(text, key):
     result = ""
     for chars in text:
-        if chars in alfabet:
-            pos = alfabet.index(chars)
+        if chars in alphabet:
+            pos = alphabet.index(chars)
             pos = pos + key
-            pos = (pos + len(alfabet)) % len(alfabet)
-            result += alfabet[pos]
+            pos = (pos + len(alphabet)) % len(alphabet)
+            result += alphabet[pos]
         else:
             result = result + chars
     return result
