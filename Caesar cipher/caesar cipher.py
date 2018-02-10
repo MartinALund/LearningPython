@@ -4,16 +4,18 @@ alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 def get_mode():
     while 1:
         text = get_text()
-        key = get_key()
         mode = set_mode()
         if mode == "encrypt":
+            key = get_key()
             print(encrypt(text, key))
         elif mode == "decrypt":
+            key = get_key()
             print(decrypt(text, key))
         elif mode == "bruteforce":
-            bruteforce(text, key)
+            bruteforce(text)
         else:
             print("You need to select a method")
+
 
 def get_text():
     text = input("Enter cipher text here: ")
@@ -38,9 +40,10 @@ def decrypt(text, key):
     return cipher(text, -key)
 
 
-def bruteforce(text, key):
+def bruteforce(text):
     for i in range(len(alfabet)):
-        print("{}:{}".format(i, cipher(text, key - i)))
+        print("{}:{}".format(i, decrypt(text,i)))
+
 
 def cipher(text, key):
     result = ""
@@ -53,4 +56,6 @@ def cipher(text, key):
         else:
             result = result + chars
     return result
+
+
 get_mode()
