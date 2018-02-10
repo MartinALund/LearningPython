@@ -13,7 +13,7 @@ def get_mode():
         elif mode == "bruteforce":
             bruteforce(text)
         elif mode == "frekvens":
-            frekvens(text)
+            get_frequency(text)
         else:
             print("You need to select a method")
 
@@ -46,7 +46,7 @@ def bruteforce(text):
         print("{}:{}".format(key, decrypt(text,key)))
 
 
-def frekvens(text):
+def get_frequency(text):
     list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     count = 0
     for chars in text:
@@ -62,8 +62,13 @@ def frekvens(text):
     print()
     char_most_appearance = max(list)
     alphabet_char = alphabet[list.index(max(list))]
+    
+    #round parameter 2 = antal decimal.
+    percent_of_time_shown = round(char_most_appearance * 100 / count,2)
     print("Total chars: {}".format(count))
-    print("{} blev vist {} gange".format(alphabet_char, char_most_appearance))
+    print("{} blev vist {} gange, dette svarer til {}%".format(alphabet_char,
+                                                               char_most_appearance,
+                                                               percent_of_time_shown))
     print()
 
 
