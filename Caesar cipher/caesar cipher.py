@@ -6,9 +6,9 @@ def get_mode():
         key = get_key()
         mode = set_mode()
         if mode == "encrypt":
-            encrypt(text, key)
+            print(encrypt(text, key))
         elif mode == "decrypt":
-            decrypt(text, key)
+            print(decrypt(text, key))
         elif mode == "bruteforce":
             print("brute force")
         else:
@@ -47,6 +47,5 @@ def cipher(text, key):
             result += alfabet[pos]
         else:
             result = result + chars
-    print(result)
-
+    return result
 get_mode()
