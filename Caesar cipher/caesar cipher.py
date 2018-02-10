@@ -45,15 +45,28 @@ def bruteforce(text):
     for key in range(len(alfabet)):
         print("{}:{}".format(key, decrypt(text,key)))
 
+
 def frekvens(text):
     list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    count = 0
     for chars in text:
+        count += 1
         if chars in alfabet:
             pos = alfabet.index(chars)
             list[pos] += 1
 
+
     for chars in alfabet:
         print("{}: {}".format(chars, list[alfabet.index(chars)]))
+
+    print()
+    print(max(list))
+    print(list.index(max(list)))
+    # Find the most common letter and print it here
+
+
+
+    print("Total chars: {}".format(count))
 
 def cipher(text, key):
     result = ""
