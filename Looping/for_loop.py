@@ -21,3 +21,21 @@ for i in range(21):
     if i % 2 != 0:
         print("Uneven: ", i)
 
+#Investment Assignment
+
+money = input("How much money do you want to invest?: ")
+interest = input("Interest rate: " )
+years = input("Over how many years? ")
+money = float(money)
+years = int(years)
+
+interest = float(interest) * .01
+
+for i in range(years):
+    money = money + (money * interest)
+
+print("Investment after {} years: {:.2f} ".format(years,money ))
+
+
+
+
