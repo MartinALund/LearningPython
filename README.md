@@ -8,6 +8,7 @@ Python is not something i will be working with on my bachelor, but i will try to
 Here are the projects included in this master project:
 
 - Caesar cipher 
+- Student tables
 
 ## Formatting
 [Basic README formatting](https://help.github.com/articles/basic-writing-and-formatting-syntax/).
