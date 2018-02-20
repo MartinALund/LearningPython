@@ -12,7 +12,7 @@ def create_tables(student_list, max_seats):
 def create_test(student_list, max_seats):
     new_list = []
     for i in range(max_seats):
-        new_list.append(student_list[i::4])
+        new_list.append(student_list[i::max_seats])
 
     return new_list
 
